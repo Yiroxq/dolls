@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Queer Page</title>
+  <title>DOTB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font stile terminale -->
@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       background: #000;
-      color: #ff00c8;
+      color: #f627ff;
       font-family: 'VT323', monospace;
       font-size: 22px;
     }
@@ -28,7 +28,7 @@
     }
 
     .top-left a {
-      color: #ff00c8;
+      color: #f627ff;
       text-decoration: none;
       padding: 4px 8px;
       transition: all 0.2s ease-in-out;
@@ -36,14 +36,14 @@
     }
 
     .top-left a:hover {
-      background: #ff00c8;
+      background: #f627ff;
       color: #000;
       transform: scale(1.08);
     }
 
     .top-left-sub {
       font-size: 1.1rem;
-      color: #ff00c8;
+      color: #f627ff;
       margin-left: 4px;
       margin-top: 4px;
       display: block;
@@ -65,10 +65,12 @@
       height: 100vh;
     }
 
-    img {
-      max-width: 60%;
-      height: auto;
-    }
+.center-image img {
+  max-width: 70%; /* 🔥 più piccola */
+  height: auto;
+  animation: strobe 3.0s infinite; /* 🔥 effetto strobe */
+}
+
 
     /* Sezione scroll */
     .section {
@@ -78,7 +80,7 @@
 
     .section-title {
       display: inline-block;
-      background: #ff00c8;
+      background: #f627ff;
       color: #000;
       padding: 5px 15px;
       font-size: 2.0rem;
@@ -93,7 +95,7 @@
     }
 
     .links-list a {
-      color: #ff00c8;
+      color: #f627ff;
       text-decoration: none;
       font-size: 1.4rem;
       padding: 4px 8px;
@@ -102,7 +104,7 @@
     }
 
     .links-list a:hover {
-      background: #ff00c8;
+      background: #f627ff;
       color: #000;
       transform: scale(1.08);
     }
@@ -116,7 +118,7 @@
     .section-centered-title {
       display: inline-block;
       background: #000;
-      color: #ff00c8;
+      color: #f627ff;
       padding: 8px 20px;
       font-size: 2.8rem;
       text-transform: uppercase;
@@ -131,52 +133,54 @@
       100% { transform: translateX(-45%); }
     }
 
-    .ecommerce-title {
-      background: #ff00c8;
-      color: #000;
-      padding: 8px 20px;
-      font-size: 2.8rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 40px;
-      display: inline-block;
-      animation: slideLR 4s ease-in-out infinite;
-    }
+   .ecommerce-title {
+  background: #f627ff;
+  color: #000;
+  padding: 8px 20px;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  display: inline-block;
+  animation: slideLR 4s ease-in-out infinite;
+  position: relative;
+  left: 37%;
+  transform: translateX(-50%);
+}
+
 
     /* GALLERIA E-COMMERCE */
-    .ecommerce-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 60px;
-    }
+.ecommerce-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+}
 
-    .ecom-img {
-      width: 260px;
-      height: auto;
-      border: 2px solid #ff00c8;
-      transition: transform 0.25s ease-in-out;
-    }
+.ecommerce-item {
+  display: flex;
+  flex-direction: column; /* 🔥 mette la didascalia sotto */
+  align-items: center;
+  text-align: center;
+}
 
-    .ecom-img:hover {
-      transform: scale(1.08);
-    }
+.ecom-img {
+  width: 260px;
+  height: 347;
+  border: 2px solid #f627ff;
+  transition: transform 0.25s ease-in-out;
+}
 
-    .ecommerce-caption {
-      color: #ff00c8;
-      font-size: 1.2rem;
-      margin-top: 10px;
-      text-align: center;
-      transition: all 0.2s ease-in-out;
-      display: inline-block;
-      padding: 4px 8px;
-    }
+.ecommerce-caption {
+  color: #f627ff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  padding: 4px 8px;
+}
 
-    .ecommerce-caption:hover {
-      background: #ff00c8;
-      color: #000;
-      transform: scale(1.08);
-    }
 
     /* GALLERIA FOTO CENTRATA + IMMAGINI PIÙ GRANDI */
     .gallery-wrapper {
@@ -198,7 +202,7 @@
       width: 100%;
       height: 260px;
       object-fit: cover;
-      border: 2px solid #ff00c8;
+      border: 2px solid #f627ff;
       cursor: pointer;
       transition: transform 0.25s ease-in-out;
     }
@@ -225,7 +229,7 @@
     #lightbox img {
       max-width: 80%;
       max-height: 80%;
-      border: 3px solid #ff00c8;
+      border: 3px solid #f627ff;
     }
 
     .lightbox-controls {
@@ -236,22 +240,22 @@
 
     .lightbox-btn {
       font-size: 2rem;
-      color: #ff00c8;
+      color: #f627ff;
       cursor: pointer;
       padding: 10px 20px;
-      border: 2px solid #ff00c8;
+      border: 2px solid #f627ff;
       transition: 0.2s;
     }
 
     .lightbox-btn:hover {
-      background: #ff00c8;
+      background: #f627ff;
       color: #000;
     }
 
     /* Sottotitoli categorie */
     .sub-gallery-title {
       font-size: 1.6rem;
-      color: #ff00c8;
+      color: #f627ff;
       margin-bottom: 25px;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -281,7 +285,7 @@
 
   /* Immagine centrale più piccola */
   .center-image img {
-    max-width: 85%;
+    max-width: 80%;
   }
 
   /* Galleria: da 4 colonne → 2 colonne */
@@ -325,6 +329,68 @@
   }
 }
 
+@keyframes strobe {
+  0%   { opacity: 1; transform: scale(1); }
+  40%  { opacity: 0; transform: scale(1.02); }
+  60%  { opacity: 1; transform: scale(1); }
+  80%  { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Effetto scrittura stile terminale */
+.typewriter {
+  overflow: hidden; 
+  white-space: nowrap;
+  border-right: 3px solid #f627ff; /* cursore */
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+/* Animazione scrittura */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 420px; } /* 🔥 lunghezza del testo */
+}
+
+/* Cursore lampeggiante */
+@keyframes blink {
+  0% { border-color: #f627ff; }
+  50% { border-color: transparent; }
+  100% { border-color: #f627ffc8; }
+}
+/* Layout CHI SIAMO con foto a destra */
+.chi-siamo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px 40px 80px 40px;
+}
+
+.chi-siamo-text {
+  width: 55%;
+  color: #f627ff;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+.chi-siamo-img-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.chi-siamo-img {
+  width: 100%;
+  border: 3px solid #f627ff;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.chi-siamo-img:hover {
+  transform: scale(1.03);
+}
+
   </style>
 </head>
 
@@ -333,10 +399,13 @@
   <!-- LINK + SOTTOTITOLO IN ALTO A SINISTRA -->
 
 
-  <div class="top-right">from queer people to queer people</div>
+  <div class="top-left typewriter">
+  FROM QUEER PEOPLE TO QUEER PEOPLE
+</div>
+
 
   <div class="center-image">
-    <img src="PERCORSO/DELLA/TUA/IMMAGINE.png" alt="Immagine centrale">
+    <img src="ecomerce/logo_dotb_sito.png" alt="Immagine centrale">
   </div>
 
   <div class="section">
@@ -357,7 +426,7 @@
   <!-- SEZIONE PROSSIME DATE -->
   <div class="section-centered">
     <div class="section-centered-title">PROSSIME DATE</div>
-    <p style="color:#ff00c8; font-size:1.3rem;">
+    <p style="color:#f627ff; font-size:1.3rem;">
       ??.??.???? ESCE IL MERCHHHH!<br><br>
       28.02.2026 DOLLS ON THE BLOCK LAUNCH PARTY 2.0<br>
       Via Trevano 56, Lugano (flamingo club)<br><br>
@@ -366,28 +435,31 @@
   </div>
 
   <!-- SEZIONE E-COMMERCE -->
-  <div class="section-centered">
-    <div class="ecommerce-title">SEZIONE E - COMMERCE</div>
+<!-- TITOLO E-COMMERCE ANIMATO -->
+<div class="ecommerce-title">SEZIONE E - COMMERCE</div>
 
-    <div class="ecommerce-gallery">
+<div class="ecommerce-gallery">
 
-      <div>
-        <img src="PERCORSO/IMMAGINE1.png" alt="Prodotto 1" class="ecom-img">
-        <p class="ecommerce-caption">BUY TICKET</p>
-      </div>
-
-      <div>
-        <img src="PERCORSO/IMMAGINE2.png" alt="Prodotto 2" class="ecom-img">
-        <p class="ecommerce-caption">GET THE PINK T-SHIRT</p>
-      </div>
-
-      <div>
-        <img src="PERCORSO/IMMAGINE3.png" alt="Prodotto 3" class="ecom-img">
-        <p class="ecommerce-caption">GET THE WHITE T-SHIRT</p>
-      </div>
-
-    </div>
+  <div class="ecommerce-item">
+    <img src="ecomerce/FLYER_28.02 2.png" class="ecom-img">
+    <p class="ecommerce-caption">BUY TICKET</p>
   </div>
+
+  <div class="ecommerce-item">
+    <img src="..." class="ecom-img">
+    <p class="ecommerce-caption">GET THE DOLLS' T-SHIRT</p>
+  </div>
+
+  <div class="ecommerce-item">
+    <img src="img/cover-1.thumb256.png" class="ecom-img">
+    <p class="ecommerce-caption">LOOK AT THEM!!!!</p>
+  </div>
+
+</div>
+
+
+</div>
+
 
   <!-- SEZIONE C*NTY GALLERY -->
   <div class="section-centered">
@@ -395,7 +467,7 @@
 <div style="text-align:center; padding-top:50px; padding-bottom:40px;">
   <a href="gallery.html" 
      style="
-       color:#ff00c8;
+       color:#f627ff;
        text-decoration:none;
        font-size:1.6rem;
        padding:6px 12px;
@@ -485,9 +557,36 @@ VIEW MORE
     <a href="mailto:3mdc.production@gmail.com" target="_blank">-> Per servizio di direzione artistica, produzione, visual identity: 3mdc.production@gmail.com</a><br>
 
   </div>
-<!-- SEZIONE CHI SIAMO --> <div class="section" style="padding-left:20px;"> <div class="section-title">CHI SIAMO</div> <p style="color:#ff00c8; font-size:1.4rem; line-height:2; max-width:800px; margin-left:0;"> Dolls on the block è una realtà di persone queer che si impegnano ad organizzare eventi, momenti e contenuti per la community. Basat* in Ticino.<br> Ogni tanto facciamo party fab, ogni tanto ci troviamo a parlare di questioni interessanti e non sul podcast, ogni tanto ci vediamo per allenarci (voguing, runway, ... dipende chi viene), ogni tanto chiacchieriamo con zonaprotetta di temi fondamentali per la nostra comunità, ogni tanto facciamo video, ogni tanto andiamo in tv, ogni tanto al parco a festeggiare qualche compleanno, ogni tanto in qualche club serving cvnt e ogni tanto quello che ci propongono… ma quasi sempre ci troviamo.<br> Il progetto è stato fondato dalle cugin* Anora (Presidente e Direttrice Creativa) e Fre (Direttore e Produttore esecutivo). Grazie al supporto di tutte le persone che hanno messo il loro tempo, arte e passione, oggi siamo dove siamo, con orgoglio e gratitudine.<br><br> Per qualsiasi domanda inerente al progetto, collaborazioni, ecc. scrivi su: <strong>dotbcommunity@gmail.com</strong> Assicurati di mettere un oggetto chiaro. </p> </div>
+<!-- SEZIONE CHI SIAMO -->
+<div class="section">
+  <div class="section-title">CHI SIAMO</div>
+</div>
+
+<div class="chi-siamo-wrapper">
+
+  <div class="chi-siamo-text">
+    <p>
+      Dolls on the Block è una realtà di persone queer che si impegnano ad organizzare eventi, momenti e contenuti per la community. Basat* in Ticino.<br><br>
+
+      Ogni tanto facciamo party fab, ogni tanto ci troviamo a parlare di questioni interessanti e non sul podcast, ogni tanto ci vediamo per allenarci (voguing, runway… dipende chi viene), ogni tanto chiacchieriamo con zonaprotetta di temi fondamentali per la nostra comunità, ogni tanto facciamo video, ogni tanto andiamo in tv, ogni tanto al parco a festeggiare qualche compleanno, ogni tanto in qualche club serving cvnt e ogni tanto quello che ci propongono… ma quasi sempre ci troviamo.<br><br>
+
+      Il progetto è stato fondato dalle cugin* Anora (Presidente e Direttrice Creativa) e Fre (Direttore e Produttore esecutivo). Grazie al supporto di tutte le persone che hanno messo il loro tempo, arte e passione, oggi siamo dove siamo, con orgoglio e gratitudine.<br><br>
+
+      Per qualsiasi domanda inerente al progetto, collaborazioni, ecc. scrivi su:<br>
+      <strong>dotbcommunity@gmail.com</strong><br>
+      Assicurati di mettere un oggetto chiaro.
+    </p>
+  </div>
+
+  <div class="chi-siamo-img-container">
+    <img src="ecomerce/foto1.png" class="chi-siamo-img" alt="Foto Chi Siamo">
+  </div>
 
 </div>
+
+
+</div>
+
 
 
 </body>
