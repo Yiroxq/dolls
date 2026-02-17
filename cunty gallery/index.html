@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>C*nty Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #f627ff;
+      font-family: 'VT323', monospace;
+      font-size: 22px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    /* 4 colonne con layout tipo collage */
+    .grid {
+      column-count: 4;
+      column-gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 20px;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 4px;
+
+      /* altezza variabile */
+      height: auto;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.05);
+      opacity: 0.85;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -35px;
+      right: 0;
+      font-size: 26px;
+      cursor: pointer;
+      color: #f627ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>C*NTY GALLERY</h1>
+
+  <div class="grid">
+
+    <!-- LE TUE IMMAGINI ORIGINALI -->
+    <div class="grid-item"><img src="dollspics/D6B9C356-524B-4061-8D82-49C68BE4B5C0.jpg"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0753.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0754.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0755.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0756.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0757.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0758.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0759.JPG"></div>
+
+    <!-- 35 NUOVE IMMAGINI (modifica i percorsi) -->
+    <!-- puoi duplicare o cambiare i nomi come vuoi -->
+    <div class="grid-item"><img src="dollspics/IMG_0760.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0761.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0762.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0763.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0764.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0765.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0766.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0767.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0768.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0769.JPG"></div>
+
+    <div class="grid-item"><img src="dollspics/IMG_0770.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0771.jpg"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0772.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0773.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0774.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0775.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0776.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0777.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0778.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0779.JPG"></div>
+
+    <div class="grid-item"><img src="dollspics/IMG_0780.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0781.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0782.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0783.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0784.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0785.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0786.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0787.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0788.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0789.JPG"></div>
+
+    <div class="grid-item"><img src="dollspics/IMG_0790.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0791.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0792.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0793.JPG"></div>
+    <div class="grid-item"><img src="dollspics/IMG_0794.JPG"></div>
+
+     <div class="grid-item"><img src="dollspics_2/IMG_6048.jpg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_6136.jpg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_6143.jpg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_6148.jpg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_6155.jpg"></div>
+
+<div class="grid-item"><img src="dollspics_2/320D0BB6-505E-4EF2-AECB-4F435767477C.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/E75EB863-7A70-48E2-B362-5D73930D8568.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/EB573CC1-30DD-471C-A24A-26EB3165BD4D.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_0734.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_0756.jpeg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_3076.jpg"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_3087.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_3090.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_3104.JPG"></div>
+    <div class="grid-item"><img src="dollspics_2/IMG_6046.jpg"></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" id="lightboxClose">[ chiudi ]</span>
+      <img id="lightboxImg" src="">
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.grid-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    items.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

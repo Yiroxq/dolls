@@ -157,19 +157,38 @@
   margin-top: 60px;
 }
 
+/* Contenitore immagini e-commerce */
 .ecommerce-item {
   display: flex;
-  flex-direction: column; /* 🔥 mette la didascalia sotto */
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.ecom-img {
-  width: 260px;
-  height: 347;
+/* Tutte le immagini stessa dimensione */
+.ecom-img,
+.swap-img {
+  width: 260px;        /* larghezza uniforme */
+  height: 260px;       /* altezza uniforme */
   border: 2px solid #f627ff;
-  transition: transform 0.25s ease-in-out;
+  object-fit: cover;   /* 🔥 ritaglia senza deformare */
+  overflow: hidden;
 }
+
+/* Per il caso della seconda immagine che cambia */
+.swap-img {
+  position: relative;
+}
+
+.swap-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+}
+
 
 .ecommerce-caption {
   color: #f627ff;
@@ -187,7 +206,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-left: 60px; /* 🔥 SPOSTA TUTTO A DESTRA */
+      margin-left: 25px; /* 🔥 SPOSTA TUTTO A DESTRA */
     }
 
     .gallery-grid {
@@ -390,6 +409,117 @@
 .chi-siamo-img:hover {
   transform: scale(1.03);
 }
+/* Contenitore generale dei prodotti */
+.ecommerce-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Tutte le immagini e-commerce stessa dimensione */
+.ecom-img,
+.swap-img {
+  width: 260px;
+  height: 260px;
+  border: 2px solid #f627ff;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Contenitore per l'immagine che cambia */
+.swap-img {
+  position: relative;
+}
+
+/* Le due immagini sovrapposte */
+.swap-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none; /* il bordo è sul contenitore */
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Foto A visibile all'inizio */
+.swap-img .img-a {
+  opacity: 1;
+  animation: swapA 2s infinite;
+}
+
+/* Foto B nascosta all'inizio */
+.swap-img .img-b {
+  opacity: 0;
+  animation: swapB 2s infinite;
+}
+
+/* Animazioni */
+@keyframes swapA {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes swapB {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* Layout CHI SIAMO */
+.chi-siamo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px 40px 80px 40px;
+}
+
+.chi-siamo-text {
+  width: 55%;
+  color: #f627ff;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+/* Contenitore immagine + testo sotto */
+.chi-siamo-img-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chi-siamo-img {
+  width: 100%;
+  border: 3px solid #f627ff;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.chi-siamo-img:hover {
+  transform: scale(1.03);
+}
+
+/* ⭐ Testo sotto l’immagine */
+.chi-siamo-img-text {
+  margin-top: 20px;
+  color: #f627ff;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 90%;
+}
+
+
+
+
+
+
+
+
 
   </style>
 </head>
@@ -445,10 +575,15 @@
     <p class="ecommerce-caption">BUY TICKET</p>
   </div>
 
-  <div class="ecommerce-item">
-    <img src="..." class="ecom-img">
-    <p class="ecommerce-caption">GET THE DOLLS' T-SHIRT</p>
+<div class="ecommerce-item">
+  <div class="swap-img">
+    <img src="ecomerce/FRONT.png" class="img-a">
+    <img src="ecomerce/BACK.png" class="img-b">
   </div>
+  <p class="ecommerce-caption">GET THE DOLLS' T-SHIRT</p>
+</div>
+
+
 
   <div class="ecommerce-item">
     <img src="img/cover-1.thumb256.png" class="ecom-img">
@@ -465,7 +600,7 @@
   <div class="section-centered">
     <div class="section-centered-title">C*NTY GALLERY</div><!-- SEE MORE LINK CENTRATO -->
 <div style="text-align:center; padding-top:50px; padding-bottom:40px;">
-  <a href="gallery.html" 
+  <a href="cunty gallery/index.html" 
      style="
        color:#f627ff;
        text-decoration:none;
@@ -474,8 +609,8 @@
        transition:all 0.2s ease-in-out;
        display:inline-block;
      "
-     onmouseover="this.style.background='#ff00c8'; this.style.color='#000'; this.style.transform='scale(1.08)';"
-     onmouseout="this.style.background='transparent'; this.style.color='#ff00c8'; this.style.transform='scale(1)';"
+     onmouseover="this.style.background='#f627ff'; this.style.color='#000'; this.style.transform='scale(1.08)';"
+     onmouseout="this.style.background='transparent'; this.style.color='#f627ff'; this.style.transform='scale(1)';"
   >
 VIEW MORE
   </a>
@@ -580,7 +715,201 @@ VIEW MORE
 
   <div class="chi-siamo-img-container">
     <img src="ecomerce/foto1.png" class="chi-siamo-img" alt="Foto Chi Siamo">
+
+    <!-- ⭐ NUOVA COLONNA DI TESTO SOTTO L’IMMAGINE -->
+    <div class="chi-siamo-img-text">
+      <p>
+        Una lista di cose che abbiamo fatto o a cui abbiamo partecipato:
+
+GIUGNO 2024
+
+22.06.2024 – Dolls on the Block Launch Party – when everything started
+Tipo: self-produced
+Luogo: Lugano
+DJs: Hausvrau, Hondabby, Venus Cyborg
+Performer: Pole Dance: Maya Luna; Surrendas<br>
+
+AGOSTO 2024<br>
+
+12.08.2024 – Dolls on the Block x Base Camp (
+Tipo: commissioned
+Luogo: Locarno
+DJs: Hausvrau, Hondabby, Sirah
+Performer: Pole Dance: Maya Luna; Surrendas; Obsidian (drag show)
+Altro: Media Team (2 cameras to film + photographer)<br>
+
+14.08.2024 – Curatela music lineup per Party di Domani (Locarno Film Festival)
+Tipo: commissioned
+Luogo: Locarno
+DJs: Hausvrau, Sirah, Venus Cyborg<br>
+
+OTTOBRE 2024<br>
+
+19.10.2024 – Open Call + Formazione per Awareness Team
+Tipo: self-produced 
+Luogo: Lugano
+Primo incontro x Angels Team<br>
+
+26.10.2024 – Dolls on the Block – Spooky Cunty
+Tipo: self-produced
+Luogo: Gordola (Locarno)
+DJs: Zion, TVBXS, Hondabby, Venus Cyborg, Aletheia
+Performer: Pole dance: Surrendas, Maya Luna
+Altro: Singer: Julie<br>
+
+NOVEMBRE 2024<br>
+
+29.11.2024 – Bar Oops x Dolls on the Block
+Tipo: commissioned
+Luogo: Lugano (Bar Oops)
+DJs: Hondabby, Guapa, Aletheia<br>
+
+DICEMBRE 2024<br>
+
+21.12.2024 – Talk interattivo contro ogni violenza fondata sul genere                   Tipo: in collaborazione con assoziazione puntozero
+Luogo: Lugano (Bar Oops)
+Altro: Talk by Elena Nuzzo<br>
+
+25.12.2024 – Queer Christmas Party
+Tipo: collaboration Luogo: Lugano (Bar Oops and Auberge)
+DJs: Guapa, Hondabby, Aletheia<br>
+
+GENNAIO 2025<br>
+
+05.01.2025 – Dolls on the Block – New Year New Me
+Tipo: self-produced and commissioned
+Luogo: Lugano
+DJs: Hondabby, Hausvrau, Guapa<br>
+
+FEBBRAIO 2025<br>
+
+02.02.2025 – Formazione Awareness Team + Open Talk contro ogni forma di violenza, discriminazione e oppressione
+Tipo: collaborazione con associazione puntozero 
+Luogo: Lugano (Bar Oops) Altro: con la collaborazione di Elena Nuzzo<br>
+
+08.02.2025 – QUEER SCHOOL DAY giornata di incontri dedicati a salute e piacere sessuale, identità di genere, linguaggio ampio...
+Tipo: in collaborazione con Zonaprotetta e Associazione Puntozero Luogo: Liceo Lugano 1 
+Altro: Elena Nuzzo, Isabel Londoño Aguilar, Davide Vasto<br>
+
+08.02.2025 – Dolls on the Block – Camp Bimbo
+Tipo: self-produced
+Luogo: Lugano (Studio Foce)
+DJs: Phum, Sabrina Oberlin, Hondabby, Guapa
+Performer: Simona (singer), Giovanni (cello), Antartica (pole dance) <br>
+
+MAGGIO 2025<br>
+
+03.05.2025 – Dolls on the Block x Carte Blanche
+Tipo: commissioned
+Luogo: Losanna
+DJs: Hondabby
+Performer: Elle (art performance)<br>
+
+25.05.2025 – Talk Festival Orme
+Tipo: Invito da Festival Orme Luogo: Lugano (Studio Foce)<br>
+
+31.05.2025 – Dolls on the Block – Hondabby’s Birthday
+Tipo: self-produced
+Luogo: Mendrisio
+DJs: Electrojunk, Hondabby<br>
+
+GIUGNO 2025<br>
+
+07.06.2025 – Community Gatherings
+Tipo: ritrovi al parco senza troppe pretese. Ci vediamo e chiacchieriamo.
+Luogo: Lugano (Parco Ciani)<br>
+
+14.06.2025 – Pride Party – DJ set by Hondabby
+Tipo: commissioned
+Luogo: Zurigo
+DJs: Hondabby<br>
+
+21.06.2025 – Community Gatherings
+Tipo: ritrovi al parco senza troppe pretese. Ci vediamo e chiacchieriamo.
+Luogo: Lugano (Parco Ciani)<br>
+
+28.06.2025 – Community Trip to Milan Pride (first pride for many ppl)
+Tipo: gita di gruppo a Milano
+Luogo: Milano<br>
+
+LUGLIO 2025<br>
+
+02.07.2025 – Assemblea pubblica + Formazione Awareness e Spazi Safer
+Luogo: Lugano – Zonaprotetta
+Altro: Fran, Ricky, Caro<br>
+
+05.07.2025 – Queer Pride – in collaborazione con FuoriLuga
+Tipo: collaborazione con Fuoriluga
+Luogo: Lugano
+DJs: Hondabby, Electrojunk, TVBXS
+Performer: Sir Concis (drag king), Himera (drag queen), Sasha Windowsen (vogue femme), Tati Windowsen (vogue femme)<br>
+
+25.07.2025 – DJ Set by Hondabby x Buskers (LongLake)
+Tipo: commissioned
+Luogo: Lugano
+DJs: Hondabby<br>
+
+31.07.2025 – DOTB x Soleggiata – Cunty Side
+Tipo: in collaboration with Soleggiata
+Luogo: Mendrisio
+DJs: Mabel, Hausvrau, Hondabby
+Performer: Himera (drag queen)<br>
+
+AGOSTO 2025<br>
+
+12.08.2025 – DOTB x Party di Domani (Film Festival Locarno)
+Tipo: commissioned
+Luogo: Locarno
+DJs: Hondabby, Phum, Hausvrau<br>
+
+14.08.2025 – DOTB x Base Camp (Film Festival Locarno)
+Tipo: commissioned
+Luogo: Locarno
+DJs: Hausvrau, Negraconda, Electrojunk
+Performer: Drag King: Sir Concis<br>
+
+OTTOBRE 2025<br>
+
+04.10.2025 – FIT FESTIVAL - Zonafranca
+Tipo: Invito Luogo: Lugano Teatro Foce
+Altro:
+• Voguing workshop – Gian Gorgeus Guggi
+• Talk about the documentary by RSI about Dolls on the Block<br>
+
+17–18.10.2025 – Le Sovversive Festival Tipo: Invito
+Luogo: Lugano
+Workshop: laboratorio collettivo di creazione di una fanzine analogica con Zonaprotetta
+Davide Vasto, Isabel Londoño Aguilar<br>
+
+NOVEMBRE 2025<br>
+
+01.11.2025 – Workshops from and for queer people (prodotto con Zonaprotetta)
+Luogo: Lugano (Studio Foce)
+Altro:
+• Voguing by Alana Tlfar
+• Yoga by Anup
+• Talk by Riccardo Ambiveri<br>
+
+
+01.11.2025 – Dolls on the Block – Apocalypse Right TF Now
+Tipo: self-produced
+Luogo: Lugano (Studio Foce)
+DJs: Hausvrau, Hondabby, Esengo, Phum
+Performer: Himera (drag queen)
+Altro: Kinnari (host)<br>
+
+DICEMBRE 2025<br>
+
+31.12.2025 – Dolls on the Block on Ice
+Tipo: commissioned
+Luogo: Mendrisio (Ice rink open-air event)
+DJs: Sabrina Oberlin, Nami Cherie, Electrojunk, Hondabby<br>
+      </p>
+    </div>
   </div>
+
+</div>
+
 
 </div>
 
