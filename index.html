@@ -206,7 +206,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-left: 25px; /* 🔥 SPOSTA TUTTO A DESTRA */
+      margin-left: 10px; /* 🔥 SPOSTA TUTTO A DESTRA */
     }
 
     .gallery-grid {
@@ -542,19 +542,19 @@
     <div class="section-title">cosa trovi in questa pagina</div>
    
     <div class="links-list">
-      <a href="#">-> PROSSIME DATE</a><br>
-      <a href="#">-> MERCHANDISING / BIGLIETTI</a><br>
-      <a href="#">-> C*NTY GALLERY</a><br>
-      <a href="#">-> CONTATTI</a><br>
-      <a href="#">-> CHI SIAMO</a><br>
-      <a href="#">-> PER FARE UNA DONAZIONE</a><br>
+      <a href="#Prossime-Date">-> PROSSIME DATE</a><br>
+      <a href="#ecommerce">-> MERCHANDISING / BIGLIETTI</a><br>
+      <a href="cunty gallery/index.html">-> C*NTY GALLERY</a><br>
+      <a href="#contatti">-> CONTATTI</a><br>
+      <a href="#chi-siamo">-> CHI SIAMO</a><br>
+      <a href="mailto:dollsontheblock@gmail.com">-> PER FARE UNA DONAZIONE</a><br>
       <a href="https://www.youtube.com/@DollsOnTheBlock">-> YOUTUBE -> podcast & DJ set</a><br>
       <a href="https://www.instagram.com/dollsontheblock/">-> INSTAGRAM -> dove siamo più attive</a>
     </div>
   </div>
 
   <!-- SEZIONE PROSSIME DATE -->
-  <div class="section-centered">
+  <div class="section-centered" id="Prossime-Date">
     <div class="section-centered-title">PROSSIME DATE</div>
     <p style="color:#f627ff; font-size:1.3rem;">
       ??.??.???? ESCE IL MERCHHHH!<br><br>
@@ -566,21 +566,22 @@
 
   <!-- SEZIONE E-COMMERCE -->
 <!-- TITOLO E-COMMERCE ANIMATO -->
-<div class="ecommerce-title">SEZIONE E - COMMERCE</div>
+<div class="ecommerce-title" id="ecommerce">SEZIONE E - COMMERCE</div>
 
 <div class="ecommerce-gallery">
 
-  <div class="ecommerce-item">
-    <img src="ecomerce/FLYER_28.02 2.png" class="ecom-img">
-    <p class="ecommerce-caption">BUY TICKET</p>
-  </div>
+ <div class="ecommerce-item">
+  <img src="img/flyermarzo26.png" class="ecom-img">
+  <a href="https://www.ticketino.com/it/event/dolls-on-the-block-the-dolls-house/213458" class="ecommerce-caption" target="_blank">BUY TICKET</a>
+</div>
+
 
 <div class="ecommerce-item">
   <div class="swap-img">
     <img src="ecomerce/FRONT.png" class="img-a">
     <img src="ecomerce/BACK.png" class="img-b">
   </div>
-  <p class="ecommerce-caption">GET THE DOLLS' T-SHIRT</p>
+  <a href="https://wa.me/message/AV6AQZKHV4GHO1" class="ecommerce-caption" target="_blank">GET A T-SHIRT</a>
 </div>
 
 
@@ -588,6 +589,12 @@
   <div class="ecommerce-item">
     <img src="img/cover-1.thumb256.png" class="ecom-img">
     <p class="ecommerce-caption">LOOK AT THEM!!!!</p>
+  </div>
+
+
+   <div class="ecommerce-item">
+    <img src="img/workshop 03 26.png" class="ecom-img">
+    <p class="ecommerce-caption">WORKSHOPS</p>
   </div>
 
 </div>
@@ -683,19 +690,21 @@ VIEW MORE
   </script>
 
   <!-- SEZIONE CONTATTI -->
-<div class="section">
+<div class="section" id="contatti">
   <div class="section-title">CONTATTI</div>
 
   <div class="links-list">
     <a href="mailto:dollsontheblock@gmail.com">-> Per collaborazioni e bookings: dollsontheblock@gmail.com</a><br>
     <a href="mailto:dotbcommunity@gmail.com" target="_blank">-> Per la community: dotbcommunity@gmail.com</a><br>
     <a href="mailto:3mdc.production@gmail.com" target="_blank">-> Per servizio di direzione artistica, produzione, visual identity: 3mdc.production@gmail.com</a><br>
-
   </div>
+</div>
+
 <!-- SEZIONE CHI SIAMO -->
-<div class="section">
+<div class="section" id="chi-siamo">
   <div class="section-title">CHI SIAMO</div>
 </div>
+
 
 <div class="chi-siamo-wrapper">
 
@@ -903,7 +912,16 @@ DICEMBRE 2025<br>
 31.12.2025 – Dolls on the Block on Ice
 Tipo: commissioned
 Luogo: Mendrisio (Ice rink open-air event)
-DJs: Sabrina Oberlin, Nami Cherie, Electrojunk, Hondabby<br>
+DJs: Sabrina Oberlin, Nami Cherie, Electrojunk, Hondabby<br><br>
+GRAZIE, grazie a tutte quelle persone che ci sono state, che sono passate e che arriveranno. <br>
+Grazie a tutte le artiste che hanno condiviso con noi il loro talento.
+
+Grazie a chi prima di noi ha lottato per rendere ciò possibile,<br> grazie a chi oggi lotta ogni giorno per mantenerlo possibile. 
+
+Non dimentichiamo tutte coloro che non possono esserci, tutte coloro che non possono essere, tutte coloro che non ci sono più. 
+Ed è anche per loro che balliamo. 
+
+L’energia che portiamo in questo spazio conta, ed è importante.
       </p>
     </div>
   </div>
@@ -914,6 +932,22 @@ DJs: Sabrina Oberlin, Nami Cherie, Electrojunk, Hondabby<br>
 </div>
 
 
+</div>
+
+<div style="text-align:center; padding-top:50px; padding-bottom:40px;">
+  <a href="mailto:dollsontheblock@gmail.com" 
+     style="
+       color:#f627ff;
+       text-decoration:none;
+       font-size:2.5rem;
+       padding:6px 12px;
+       transition:all 0.2s ease-in-out;
+       display:inline-block;
+     "
+     onmouseover="this.style.background='#f627ff'; this.style.color='#000'; this.style.transform='scale(1.08)';"
+     onmouseout="this.style.background='transparent'; this.style.color='#f627ff'; this.style.transform='scale(1)';"
+  >
+contattaci se vuoi fare una donazione  </a>
 </div>
 
 
